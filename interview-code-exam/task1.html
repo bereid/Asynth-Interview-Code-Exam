@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<script src="jquery.js"></script>
+	</head>
+	<body>
+		<a id="myLink" href="#">Test</a>
+		<script>
+			$("#myLink").on("click", function() {
+				$.ajax({
+					success: function() {
+						console.log($('#myLink').attr('id'));
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
+
+<!-- problem: The code try to log the id of the AJAX-call, not the html tag 
+     solution: I use a new jQuery instead of using 'this' -->
